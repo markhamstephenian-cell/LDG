@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LDG - The Long Dunn Game</title>
+
+    <!-- PWA & Mobile App Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="LDG">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1a365d">
+    <meta name="description" content="The Long Dunn Game - A century-old family word game tradition">
+
+    <!-- App Icons -->
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="ornament top-left"></div>
+        <div class="ornament top-right"></div>
+        <div class="ornament bottom-left"></div>
+        <div class="ornament bottom-right"></div>
+
+        <header class="hero">
+            <div class="logo-container">
+                <div class="logo-emblem">
+                    <span class="logo-letter">L</span>
+                    <span class="logo-letter">D</span>
+                    <span class="logo-letter">G</span>
+                </div>
+                <h1 class="main-title">The Long Dunn Game</h1>
+                <p class="tagline">A Century of Family Tradition</p>
+            </div>
+        </header>
+
+        <section class="story-section">
+            <div class="story-container">
+                <div class="story-icon">📜</div>
+                <h2>Our Heritage</h2>
+                <p class="story-text">
+                    For over a century, this beloved game has woven its way through the fabric of our family history.
+                    It began with the <strong>Long family</strong> in the elegant parlours of London, England, where
+                    wit and wordplay were the entertainment of choice. From there, it was lovingly passed to the
+                    <strong>Dunn family</strong>, who cherished it so dearly that the game bears their name to this day.
+                </p>
+                <p class="story-text">
+                    Through generations, the tradition continued—from the <strong>Markhams</strong> to the
+                    <strong>Crofts</strong>, and onward to the <strong>Brooks</strong>. Each family gathering,
+                    each holiday celebration, each reunion has been enriched by this delightful challenge of
+                    quick thinking and creativity.
+                </p>
+                <p class="story-text highlight">
+                    Now, we invite you to join our family tradition. The <em>Long Dunn Game</em>—named for its
+                    origins and for the joyful hours spent in spirited competition—awaits you.
+                </p>
+                <div class="family-crest">
+                    <div class="crest-names">
+                        <span>Long</span>
+                        <span class="divider">•</span>
+                        <span>Dunn</span>
+                        <span class="divider">•</span>
+                        <span>Markham</span>
+                        <span class="divider">•</span>
+                        <span>Croft</span>
+                        <span class="divider">•</span>
+                        <span>Brooks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rules-section">
+            <div class="rules-container">
+                <div class="rules-icon">📖</div>
+                <h2>How to Play</h2>
+
+                <div class="rules-intro">
+                    <p>The Long Dunn Game is a word game that tests your quick thinking and creativity. A letter is chosen at random, and you must think of words beginning with that letter for each of 14 categories—all within 5 minutes!</p>
+                </div>
+
+                <div class="categories-list">
+                    <h3>The 14 Categories</h3>
+                    <div class="category-pills">
+                        <span>Town</span><span>State</span><span>Country</span><span>Boy's Name</span>
+                        <span>Girl's Name</span><span>Article of Clothing</span><span>Fruit</span>
+                        <span>Flower</span><span>Vegetable</span><span>Bird</span><span>Animal</span>
+                        <span>Fish</span><span>Mountain</span><span>River</span>
+                    </div>
+                </div>
+
+                <div class="game-modes">
+                    <div class="mode-card">
+                        <div class="mode-icon">👤</div>
+                        <h3>Individual Play</h3>
+                        <p class="mode-description">Practice on your own and challenge yourself to beat your best score.</p>
+                        <ol class="instructions-list">
+                            <li>Click <strong>"Individual Play"</strong> below</li>
+                            <li>Click <strong>"Begin Challenge"</strong> to start</li>
+                            <li>A random letter will appear and the 5-minute timer begins</li>
+                            <li>Type an answer for each category that starts with the letter</li>
+                            <li>Click <strong>"Submit Answers"</strong> when finished (or wait for time to run out)</li>
+                            <li>Score 10 points for each valid answer—over 120 points earns a celebration!</li>
+                        </ol>
+                    </div>
+
+                    <div class="mode-card">
+                        <div class="mode-icon">👥</div>
+                        <h3>Group Play</h3>
+                        <p class="mode-description">Compete with family and friends anywhere in the world!</p>
+                        <ol class="instructions-list">
+                            <li>Click <strong>"Group Play"</strong> below</li>
+                            <li>Enter your name and click <strong>"Create Game"</strong></li>
+                            <li>Share the 6-letter game code with other players</li>
+                            <li>Wait for players to join (you'll see them appear in the lobby)</li>
+                            <li>Each player clicks <strong>"Start My Challenge"</strong> when ready</li>
+                            <li>Everyone gets the same letter and 5 minutes to answer</li>
+                            <li>Once all players submit, click <strong>"Review Answers"</strong></li>
+                            <li>Mark any invalid answers, then click <strong>"Confirm Results"</strong></li>
+                            <li>View the final leaderboard and celebrate the winner!</li>
+                        </ol>
+                        <div class="scoring-note">
+                            <strong>Group Scoring:</strong> Unique answers earn 10 points. If two players give the same answer, each scores 9 points. Three players with the same answer score 8 points each, and so on.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="rejoin-banner" class="rejoin-banner hidden">
+            <div class="rejoin-banner-content">
+                <div class="rejoin-banner-text">
+                    <span class="rejoin-icon">🎮</span>
+                    <div>
+                        <strong id="rejoin-banner-title">You have an active game!</strong>
+                        <p id="rejoin-banner-detail">Game code: <span id="rejoin-banner-code"></span></p>
+                    </div>
+                </div>
+                <div class="rejoin-banner-actions">
+                    <button id="rejoin-btn" class="rejoin-button">Rejoin</button>
+                    <button id="rejoin-dismiss-btn" class="rejoin-dismiss">✕</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="play-options">
+            <h2>Choose Your Challenge</h2>
+            <div class="button-container">
+                <button id="individual-btn" class="play-button individual">
+                    <div class="button-icon">👤</div>
+                    <div class="button-text">
+                        <span class="button-title">Individual Play</span>
+                        <span class="button-subtitle">Test your wit solo</span>
+                    </div>
+                </button>
+                <button id="multiplayer-btn" class="play-button multiplayer">
+                    <div class="button-icon">👥</div>
+                    <div class="button-text">
+                        <span class="button-title">Group Play</span>
+                        <span class="button-subtitle">Challenge family & friends</span>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <footer class="landing-footer">
+            <p>Est. circa 1920 • London, England</p>
+        </footer>
+    </div>
+
+    <!-- Individual Play Page -->
+    <div id="individual-page" class="page">
+        <nav class="game-nav">
+            <button id="back-to-home" class="nav-button">← Back to Home</button>
+            <div class="nav-title">Individual Challenge</div>
+            <div class="nav-spacer"></div>
+        </nav>
+
+        <div id="individual-intro" class="game-intro">
+            <div class="intro-content">
+                <h2>Individual Challenge</h2>
+                <p>You will be given a random letter. Think of answers for each category that begin with that letter.</p>
+                <p>You have <strong>5 minutes</strong> to complete all categories.</p>
+                <p>Score <strong>10 points</strong> for each correct answer. Achieve over <strong>120 points</strong> for a special celebration!</p>
+
+                <div class="categories-preview">
+                    <h3>Categories</h3>
+                    <div class="category-tags">
+                        <span class="tag">Town</span>
+                        <span class="tag">State</span>
+                        <span class="tag">Country</span>
+                        <span class="tag">Boy's Name</span>
+                        <span class="tag">Girl's Name</span>
+                        <span class="tag">Article of Clothing</span>
+                        <span class="tag">Fruit</span>
+                        <span class="tag">Flower</span>
+                        <span class="tag">Vegetable</span>
+                        <span class="tag">Bird</span>
+                        <span class="tag">Animal</span>
+                        <span class="tag">Fish</span>
+                        <span class="tag">Mountain</span>
+                        <span class="tag">River</span>
+                    </div>
+                </div>
+
+                <button id="start-individual" class="start-button">
+                    <span>Begin Challenge</span>
+                    <div class="button-shine"></div>
+                </button>
+            </div>
+        </div>
+
+        <div id="individual-game" class="game-area hidden">
+            <div class="game-header">
+                <div class="letter-display">
+                    <span class="letter-label">Your Letter</span>
+                    <span id="game-letter" class="the-letter">A</span>
+                </div>
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <svg class="timer-svg" viewBox="0 0 100 100">
+                            <circle class="timer-bg" cx="50" cy="50" r="45"/>
+                            <circle id="timer-progress" class="timer-progress" cx="50" cy="50" r="45"/>
+                        </svg>
+                        <div class="timer-text">
+                            <span id="timer-minutes">05</span>:<span id="timer-seconds">00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="score-display">
+                    <span class="score-label">Score</span>
+                    <span id="current-score" class="the-score">0</span>
+                </div>
+            </div>
+
+            <div class="music-control">
+                <button id="music-toggle" class="music-btn" title="Toggle Music">
+                    <span class="music-icon">🎵</span>
+                    <span class="music-status">Music On</span>
+                </button>
+            </div>
+
+            <form id="game-form" class="categories-form">
+                <div class="categories-grid">
+                    <div class="category-item">
+                        <label for="town">Town</label>
+                        <input type="text" id="town" name="town" placeholder="Enter a town..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" placeholder="Enter a state..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" placeholder="Enter a country..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="boys-name">Boy's Name</label>
+                        <input type="text" id="boys-name" name="boys-name" placeholder="Enter a boy's name..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="girls-name">Girl's Name</label>
+                        <input type="text" id="girls-name" name="girls-name" placeholder="Enter a girl's name..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="clothing">Article of Clothing</label>
+                        <input type="text" id="clothing" name="clothing" placeholder="Enter clothing item..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="fruit">Fruit</label>
+                        <input type="text" id="fruit" name="fruit" placeholder="Enter a fruit..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="flower">Flower</label>
+                        <input type="text" id="flower" name="flower" placeholder="Enter a flower..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="vegetable">Vegetable</label>
+                        <input type="text" id="vegetable" name="vegetable" placeholder="Enter a vegetable..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="bird">Bird</label>
+                        <input type="text" id="bird" name="bird" placeholder="Enter a bird..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="animal">Animal</label>
+                        <input type="text" id="animal" name="animal" placeholder="Enter an animal..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="fish">Fish</label>
+                        <input type="text" id="fish" name="fish" placeholder="Enter a fish..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mountain">Mountain</label>
+                        <input type="text" id="mountain" name="mountain" placeholder="Enter a mountain..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="river">River</label>
+                        <input type="text" id="river" name="river" placeholder="Enter a river..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                </div>
+                <button type="submit" id="submit-individual" class="submit-button">Submit Answers</button>
+            </form>
+        </div>
+
+        <div id="individual-results" class="results-area hidden">
+            <!-- Results will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Multiplayer Page -->
+    <div id="multiplayer-page" class="page">
+        <nav class="game-nav">
+            <button id="back-to-home-mp" class="nav-button">← Back to Home</button>
+            <div class="nav-title">Group Challenge</div>
+            <div class="nav-spacer"></div>
+        </nav>
+
+        <div id="multiplayer-lobby" class="lobby-area">
+            <div class="lobby-content">
+                <h2>Group Challenge</h2>
+                <p class="lobby-description">
+                    Create a game and invite family & friends from around the world to play together!
+                    Everyone has 24 hours to submit their answers.
+                </p>
+
+                <div class="lobby-options">
+                    <div class="lobby-card join-game">
+                        <div class="card-icon">🔗</div>
+                        <h3>Join Existing Game</h3>
+                        <p>Enter a game code to join</p>
+                        <div class="join-inputs">
+                            <div class="input-group">
+                                <label for="join-name">Your Name</label>
+                                <input type="text" id="join-name" placeholder="Enter your name..." maxlength="20">
+                            </div>
+                            <div class="input-group">
+                                <label for="game-code">Game Code</label>
+                                <input type="text" id="game-code" placeholder="Enter game code..." maxlength="8">
+                            </div>
+                        </div>
+                        <button id="join-game-btn" class="lobby-button">Join Game</button>
+                    </div>
+
+                    <div class="lobby-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="lobby-card create-game">
+                        <div class="card-icon">🎮</div>
+                        <h3>Create New Game</h3>
+                        <p>Start a new game and invite players</p>
+                        <div class="player-name-input">
+                            <label for="host-name">Your Name</label>
+                            <input type="text" id="host-name" placeholder="Enter your name..." maxlength="20">
+                        </div>
+                        <button id="create-game-btn" class="lobby-button">Create Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="multiplayer-waiting" class="waiting-area hidden">
+            <div class="waiting-content">
+                <h2>Game Lobby</h2>
+                <div class="game-code-display">
+                    <span class="code-label">Share this code with friends:</span>
+                    <div class="code-box">
+                        <span id="display-game-code">ABC123</span>
+                        <button id="copy-code-btn" class="copy-btn" title="Copy Code">📋</button>
+                    </div>
+                </div>
+
+                <div class="invite-section">
+                    <h3>Invite Players</h3>
+                    <div class="invite-methods">
+                        <div class="invite-method">
+                            <input type="text" id="invite-contact" placeholder="Enter email or phone number...">
+                            <button id="send-invite-btn" class="invite-btn">Send Invite</button>
+                        </div>
+                        <div class="invite-link-section">
+                            <span>Or share this link:</span>
+                            <div class="link-box">
+                                <input type="text" id="invite-link" readonly>
+                                <button id="copy-link-btn" class="copy-btn" title="Copy Link">📋</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="players-section">
+                    <h3>Players in This Game</h3>
+                    <p class="players-subtitle">See who has joined and their game status</p>
+                    <div class="players-status-header">
+                        <span class="status-count"><span id="player-count">1</span> joined</span>
+                        <span class="status-divider">•</span>
+                        <span class="status-count"><span id="completed-count">0</span> completed</span>
+                    </div>
+                    <div id="players-list" class="players-list">
+                        <!-- Players will be added here -->
+                    </div>
+                </div>
+
+                <div class="game-timing">
+                    <div class="timing-info">
+                        <span class="timing-icon">⏰</span>
+                        <span>Game ends in: <strong id="game-deadline">24:00:00</strong></span>
+                    </div>
+                    <p class="timing-note">All players must submit their answers within this time</p>
+                </div>
+
+                <button id="start-mp-game-btn" class="start-button">
+                    <span>Start My Challenge</span>
+                    <div class="button-shine"></div>
+                </button>
+            </div>
+        </div>
+
+        <div id="multiplayer-game" class="game-area hidden">
+            <div class="game-header">
+                <div class="letter-display">
+                    <span class="letter-label">Your Letter</span>
+                    <span id="mp-game-letter" class="the-letter">A</span>
+                </div>
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <svg class="timer-svg" viewBox="0 0 100 100">
+                            <circle class="timer-bg" cx="50" cy="50" r="45"/>
+                            <circle id="mp-timer-progress" class="timer-progress" cx="50" cy="50" r="45"/>
+                        </svg>
+                        <div class="timer-text">
+                            <span id="mp-timer-minutes">05</span>:<span id="mp-timer-seconds">00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="players-playing">
+                    <span class="players-label">Players</span>
+                    <span id="players-submitted">0/0</span>
+                </div>
+            </div>
+
+            <div class="music-control">
+                <button id="mp-music-toggle" class="music-btn" title="Toggle Music">
+                    <span class="music-icon">🎵</span>
+                    <span class="music-status">Music On</span>
+                </button>
+            </div>
+
+            <form id="mp-game-form" class="categories-form">
+                <div class="categories-grid">
+                    <div class="category-item">
+                        <label for="mp-town">Town</label>
+                        <input type="text" id="mp-town" name="town" placeholder="Enter a town..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-state">State</label>
+                        <input type="text" id="mp-state" name="state" placeholder="Enter a state..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-country">Country</label>
+                        <input type="text" id="mp-country" name="country" placeholder="Enter a country..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-boys-name">Boy's Name</label>
+                        <input type="text" id="mp-boys-name" name="boys-name" placeholder="Enter a boy's name..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-girls-name">Girl's Name</label>
+                        <input type="text" id="mp-girls-name" name="girls-name" placeholder="Enter a girl's name..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-clothing">Article of Clothing</label>
+                        <input type="text" id="mp-clothing" name="clothing" placeholder="Enter clothing item..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-fruit">Fruit</label>
+                        <input type="text" id="mp-fruit" name="fruit" placeholder="Enter a fruit..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-flower">Flower</label>
+                        <input type="text" id="mp-flower" name="flower" placeholder="Enter a flower..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-vegetable">Vegetable</label>
+                        <input type="text" id="mp-vegetable" name="vegetable" placeholder="Enter a vegetable..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-bird">Bird</label>
+                        <input type="text" id="mp-bird" name="bird" placeholder="Enter a bird..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-animal">Animal</label>
+                        <input type="text" id="mp-animal" name="animal" placeholder="Enter an animal..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-fish">Fish</label>
+                        <input type="text" id="mp-fish" name="fish" placeholder="Enter a fish..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-mountain">Mountain</label>
+                        <input type="text" id="mp-mountain" name="mountain" placeholder="Enter a mountain..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                    <div class="category-item">
+                        <label for="mp-river">River</label>
+                        <input type="text" id="mp-river" name="river" placeholder="Enter a river..." autocomplete="off">
+                        <span class="validation-icon"></span>
+                    </div>
+                </div>
+                <button type="submit" id="submit-mp" class="submit-button">Submit Answers</button>
+            </form>
+        </div>
+
+        <div id="multiplayer-submitted" class="submitted-area hidden">
+            <div class="submitted-content">
+                <div class="submitted-icon">✅</div>
+                <h2>Answers Submitted!</h2>
+                <p>Your answers have been recorded. Now wait for other players to complete their challenge.</p>
+
+                <div class="waiting-for-players">
+                    <h3>Player Status</h3>
+                    <div id="player-status-list" class="player-status-list">
+                        <!-- Player statuses will be shown here -->
+                    </div>
+                </div>
+
+                <div class="deadline-reminder">
+                    <span class="timing-icon">⏰</span>
+                    <span>Results available when all players submit or in: <strong id="results-countdown">--:--:--</strong></span>
+                </div>
+
+                <button id="view-results-btn" class="view-results-button hidden">
+                    <span>Review Answers</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="multiplayer-review" class="review-area hidden">
+            <!-- Answer review will be populated by JavaScript -->
+        </div>
+
+        <div id="multiplayer-results" class="results-area hidden">
+            <!-- Results will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Celebration Overlay -->
+    <div id="celebration-overlay" class="celebration-overlay hidden">
+        <div class="celebration-content">
+            <div class="confetti-container" id="confetti-container"></div>
+            <div class="celebration-text">
+                <div class="trophy">🏆</div>
+                <h1 id="celebration-title">Congratulations!</h1>
+                <p id="celebration-message">You've achieved an outstanding score!</p>
+                <div class="celebration-score">
+                    <span id="final-score">140</span>
+                    <span class="score-suffix">points</span>
+                </div>
+                <div class="celebration-emojis">
+                    🎉 🌟 👏 🎊 ✨
+                </div>
+                <button id="celebration-close" class="celebration-button">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

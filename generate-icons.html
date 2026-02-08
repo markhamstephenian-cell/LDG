@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate LDG Icons</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; text-align: center; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .instructions { max-width: 600px; margin: 0 auto 30px; }
+        button { padding: 15px 30px; font-size: 16px; margin: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>LDG Icon Generator</h1>
+    <div class="instructions">
+        <p>Click each button to download the icon, then place them in your LDG project folder.</p>
+    </div>
+
+    <div>
+        <canvas id="icon512" width="512" height="512"></canvas>
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <canvas id="icon180" width="180" height="180"></canvas>
+        <canvas id="icon32" width="32" height="32"></canvas>
+    </div>
+
+    <div>
+        <button onclick="download('icon512', 'icon-512.png')">Download 512x512</button>
+        <button onclick="download('icon192', 'icon-192.png')">Download 192x192</button>
+        <button onclick="download('icon180', 'icon-180.png')">Download 180x180</button>
+        <button onclick="download('icon32', 'icon-32.png')">Download 32x32</button>
+    </div>
+
+    <script>
+        function drawIcon(canvas) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+            const scale = size / 512;
+
+            // Background - navy blue with subtle gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#1a365d');
+            gradient.addColorStop(1, '#0f2744');
+            ctx.fillStyle = gradient;
+
+            // Rounded rectangle background
+            const radius = size * 0.18;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, radius);
+            ctx.fill();
+
+            // Gold accent circle
+            ctx.strokeStyle = '#c6a052';
+            ctx.lineWidth = size * 0.02;
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size * 0.38, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Inner decorative circle
+            ctx.strokeStyle = 'rgba(198, 160, 82, 0.3)';
+            ctx.lineWidth = size * 0.01;
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size * 0.32, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Letters LDG
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `bold ${size * 0.28}px "Georgia", serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('LDG', size/2, size/2 - size*0.02);
+
+            // Decorative line under text
+            ctx.strokeStyle = '#c6a052';
+            ctx.lineWidth = size * 0.015;
+            ctx.beginPath();
+            ctx.moveTo(size * 0.28, size * 0.65);
+            ctx.lineTo(size * 0.72, size * 0.65);
+            ctx.stroke();
+
+            // Small decorative dots
+            ctx.fillStyle = '#c6a052';
+            ctx.beginPath();
+            ctx.arc(size * 0.25, size * 0.65, size * 0.015, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(size * 0.75, size * 0.65, size * 0.015, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function download(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Draw all icons
+        ['icon512', 'icon192', 'icon180', 'icon32'].forEach(id => {
+            drawIcon(document.getElementById(id));
+        });
+    </script>
+</body>
+</html>
