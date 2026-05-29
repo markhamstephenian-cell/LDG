@@ -1,0 +1,30 @@
+{
+  "name": "ldg-claude-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "sync": "cp index.html app.js styles.css manifest.json www/ && cap sync ios",
+    "open:ios": "cap open ios",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markhamstephenian-cell/LDG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/markhamstephenian-cell/LDG/issues"
+  },
+  "homepage": "https://github.com/markhamstephenian-cell/LDG#readme",
+  "dependencies": {
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/ios": "^8.3.4",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.2"
+  }
+}

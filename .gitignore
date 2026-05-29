@@ -1,0 +1,14 @@
+# Node
+node_modules/
+
+# Capacitor / iOS build artifacts
+ios/App/Pods/
+ios/App/App/public/
+ios/App/build/
+ios/DerivedData/
+ios/App/output/
+*.xcuserstate
+xcuserdata/
+
+# macOS
+.DS_Store
