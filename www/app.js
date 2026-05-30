@@ -683,6 +683,16 @@ function showIndividualResults() {
 // Celebration Functions
 // =============================================
 
+let celebrationAutoTimer = null;
+
+function closeCelebration() {
+    const overlay = document.getElementById('celebration-overlay');
+    if (!overlay) return;
+    clearTimeout(celebrationAutoTimer);
+    overlay.classList.remove('active');
+    setTimeout(() => overlay.classList.add('hidden'), 300);
+}
+
 function showCelebration(score, winnerName = null) {
     const overlay = document.getElementById('celebration-overlay');
     const title = document.getElementById('celebration-title');
@@ -704,6 +714,13 @@ function showCelebration(score, winnerName = null) {
 
     overlay.classList.remove('hidden');
     setTimeout(() => overlay.classList.add('active'), 10);
+
+    // Never let the overlay trap the user on the results screen: a tap anywhere
+    // on it dismisses it, and it auto-dismisses after a few seconds so the
+    // "Play Again" / "Back to Home" buttons underneath are always reachable.
+    overlay.onclick = closeCelebration;
+    clearTimeout(celebrationAutoTimer);
+    celebrationAutoTimer = setTimeout(closeCelebration, 4500);
 }
 
 function createConfetti() {
@@ -723,11 +740,7 @@ function createConfetti() {
     }
 }
 
-document.getElementById('celebration-close').addEventListener('click', () => {
-    const overlay = document.getElementById('celebration-overlay');
-    overlay.classList.remove('active');
-    setTimeout(() => overlay.classList.add('hidden'), 300);
-});
+document.getElementById('celebration-close').addEventListener('click', closeCelebration);
 
 // =============================================
 // Multiplayer Functions - Firebase Integration
@@ -1708,10 +1721,8 @@ function showMultiplayerResults() {
         </div>
     `;
 
-    // Show celebration for winner
-    if (winnerScore > 0) {
-        setTimeout(() => showCelebration(winnerScore, winner.name), 500);
-    }
+    // The winner is shown directly on the results screen (trophy + name +
+    // score above), so no full-screen celebration pop-up is needed here.
 
     // Clear session since game is complete
     clearGameSession();
