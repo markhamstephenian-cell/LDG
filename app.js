@@ -1076,25 +1076,35 @@ function showCopyFeedback(message) {
 }
 
 // Send invite
-document.getElementById('send-invite-btn').addEventListener('click', () => {
+document.getElementById('send-invite-btn').addEventListener('click', async () => {
     const contact = document.getElementById('invite-contact').value.trim();
-    if (!contact) {
-        alert('Please enter an email or phone number');
-        return;
-    }
-
     const inviteLink = `${window.location.origin}${window.location.pathname}?join=${multiplayerState.gameCode}`;
     const message = `Join me for a game of LDG (The Long Dunn Game)!\n\nGame Code: ${multiplayerState.gameCode}\n\nJoin here: ${inviteLink}`;
 
-    // Check if it looks like a phone number
-    if (/^\+?[\d\s-()]+$/.test(contact)) {
-        // Open SMS
-        window.open(`sms:${contact}?body=${encodeURIComponent(message)}`);
-    } else if (contact.includes('@')) {
-        // Open email
-        window.open(`mailto:${contact}?subject=Join my LDG Game!&body=${encodeURIComponent(message)}`);
+    // Preferred path: native share sheet (iOS/macOS/Android). Lets the player
+    // pick Messages, Mail, WhatsApp, etc. Triggered by this click = a user gesture.
+    if (navigator.share) {
+        try {
+            await navigator.share({ title: 'Join my LDG Game!', text: message, url: inviteLink });
+            document.getElementById('invite-contact').value = '';
+            return;
+        } catch (err) {
+            if (err && err.name === 'AbortError') return; // user dismissed the share sheet
+            // otherwise fall through to the fallbacks below
+        }
+    }
+
+    // Fallbacks when the Web Share API isn't available (older desktop browsers).
+    // Use location.href (not window.open) so we don't spawn a blank tab or trip
+    // Safari's "blocked from automatically composing an email" guard.
+    if (contact && /^\+?[\d\s\-()]+$/.test(contact)) {
+        window.location.href = `sms:${contact}?&body=${encodeURIComponent(message)}`;
+    } else if (contact && contact.includes('@')) {
+        window.location.href = `mailto:${contact}?subject=${encodeURIComponent('Join my LDG Game!')}&body=${encodeURIComponent(message)}`;
     } else {
-        alert(`Share this with ${contact}:\n\n${message}`);
+        // No share sheet and nothing typed: copy the invite so it can be pasted anywhere.
+        navigator.clipboard.writeText(message);
+        showCopyFeedback('Invite copied — paste it to a friend!');
     }
 
     document.getElementById('invite-contact').value = '';
