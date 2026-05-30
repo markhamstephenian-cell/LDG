@@ -2079,12 +2079,17 @@ h1, h2, h3, h4 {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
+    /* Never intercept clicks unless actively shown. Without this the overlay
+       keeps swallowing taps for the 300ms fade-out (visibility only flips at
+       the end of the transition), which blocked the "Back to Home" buttons. */
+    pointer-events: none;
     transition: all var(--transition-normal);
 }
 
 .celebration-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .celebration-content {
